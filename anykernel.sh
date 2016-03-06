@@ -218,6 +218,7 @@ replace_string init.mmi.rc "scheduler noop" "scheduler cfq" "scheduler noop"
 
 insert_line init.rc "init.frankenclark.rc" after "import /init.trace.rc" "import /init.frankenclark.rc";
 
+replace_string $split_img/boot.img-cmdline "nodebug" " debug" " "
 cmdtmp=`cat $split_img/boot.img-cmdline`;
 case "$cmdtmp" in 
 	*cpu_max_a53*) ;;
